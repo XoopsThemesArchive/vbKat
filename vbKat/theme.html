@@ -1,0 +1,160 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<{$xoops_langcode}>" lang="<{$xoops_langcode}>">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=<{$xoops_charset}>" />
+<meta http-equiv="content-language" content="<{$xoops_langcode}>" />
+<meta name="keywords" content="<{$xoops_meta_keywords}>" />
+<meta name="robots" content="<{$xoops_meta_robots}>" />
+<meta name="description" content="<{$xoops_meta_description}>" />
+<meta name="rating" content="general" />
+<meta name="author" content="<{$xoops_sitename}>" />
+<meta name="copyright" content="<{$meta_copyright}>" />
+<meta name="generator" content="XOOPS" />
+<title><{$xoops_sitename}> - <{$xoops_pagetitle}></title>
+<link href="<{$xoops_url}>/favicon.ico" rel="SHORTCUT ICON" />
+<link rel="stylesheet" type="text/css" media="all" href="<{$xoops_url}>/xoops.css" />
+<link rel="alternate" type="application/rss+xml" title="RSS" href="<{$xoops_url}>/backend.php" />
+<link rel="stylesheet" type="text/css" media="all" href="<{$xoops_themecss}>" />
+<!-- RMV: added module header -->
+<{$xoops_module_header}>
+<script type="text/javascript">
+<!--
+<{$xoops_js}>
+//-->
+</script>
+</head>
+
+<body>
+<table id="topx" width="100%"  border="0" cellpadding="0" cellspacing="0" bordercolor="#0B198C">
+  <tr>
+    <th valign="top" scope="col"><table width="100%"  border="0	" cellspacing="0" cellpadding="0">
+      <tr>
+        <th width="69%" valign="top" bgcolor="#F5F5FF" scope="col"><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <th width="2%" scope="col"><img src="<{$xoops_imageurl}>images/navbits_start.gif" width="15" height="15"></th>
+            <th width="98%" align="left" valign="top" scope="col"><{$xoops_sitename}></th>
+          </tr>
+        </table></th>
+        <th width="31%" bgcolor="#E1E4F2" scope="col"><{if $xoops_isuser == false}><form style="margin: 0px;" action="<{$xoops_url}>/user.php" method="post">
+          <input type="text" name="uname" size="12" onFocus="this.value=''" value="User Name" />
+          <input type="password" name="pass" size="12" onFocus="this.value=''" value='myxoops'/>
+          <input type="hidden" name="xoops_redirect" value="/index.php" />
+          <input type="hidden" name="op" value="login" />
+          <input name="submit" type="submit" value="Login" />
+        </form><{/if}></th>
+      </tr>
+      <tr bgcolor="#738FBF">
+        <td id="linkx" colspan="2"><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <th id="linka" scope="col"><a href="/index.php">Home</a></th>
+            <th id="linkb" scope="col"><a href="/modules/newbb/">Forums</a></th>
+            <th id="linkc" scope="col"><a href="/modules/PDdownloads/">Downloads</a></th>
+            <th id="linkd" scope="col"><a href="#">Photos</a></th>
+            <th id="linke" scope="col"><a href="/modules/cjaycontent/index.php?id=2">Chat Room</a> </th>
+          </tr>
+        </table></td>
+        </tr>
+    </table></th>
+  </tr>
+</table>
+<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <th scope="col">&nbsp;</th>
+  </tr>
+</table>
+<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <th valign="top" scope="col"><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <th width="15%" valign="top" scope="col"><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+		<{foreach item=block from=$xoops_lblocks}>
+          <tr>
+            <th id="leftx" scope="col"><!-- Start left blocks loop -->
+<div class="blockTitle">»&nbsp;<{$block.title}></div>
+<div class="blockContent"><{$block.content}></div>
+<!-- End left blocks loop --></th>
+          </tr>
+		  
+          <tr>
+            <td>&nbsp;</td>
+          </tr>
+		  <{/foreach}>
+        </table></th>
+        <th width="70%" valign="top" scope="col"><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <th width="2%" scope="col">&nbsp;</th>
+            <th id="centerx" width="96%" valign="top" scope="col"><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <th valign="top" scope="col"><div id="content"><{$xoops_contents}></div></th>
+              </tr>
+              <tr>
+<{if !empty($xoops_contents)}>                <td valign="top"><!-- Start center-center-top blocks loop -->
+<{foreach item=block from=$xoops_ccblocks_up}>
+<div class="blockTitle"><{$block.title}></div>
+<div class="blockContent"><{$block.content}></div>
+<{/foreach}>
+<!-- End center-center-top blocks loop --></td><{/if}>
+              </tr>
+              <tr>
+<{if !empty($xoops_contents)}>                <td><!-- Start center-center-bottom blocks loop -->
+<{foreach item=block from=$xoops_ccblocks_down}>
+<div class="blockTitle"><{$block.title}></div>
+<div class="blockContent"><{$block.content}></div>
+<{/foreach}>
+<!-- End center-center-bottom blocks loop --></td><{/if}>
+              </tr>
+              <tr>
+<{if $xoops_showcblock == 1}>                <td><!-- Start center-center blocks loop -->
+<{foreach item=block from=$xoops_ccblocks}>
+<div class="blockTitle"><{$block.title}></div>
+<div class="blockContent"><{$block.content}></div>
+<{/foreach}>
+<!-- End center-center blocks loop --></td><{/if}>
+              </tr>
+              <tr>
+                <td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+<{if !empty($xoops_contents)}>                    <th valign="top" scope="col"><!-- Start center-left blocks loop -->
+<{foreach item=block from=$xoops_clblocks}>
+<div class="blockTitle"><{$block.title}></div>
+<div class="blockContent"><{$block.content}></div>
+<{/foreach}>
+<!-- End center-left blocks loop --></th><{/if}>
+<{if !empty($xoops_contents)}>                    <th valign="top" scope="col"><!-- Start center-right blocks loop -->
+<{foreach item=block from=$xoops_crblocks}>
+<div class="blockTitle"><{$block.title}></div>
+<div class="blockContent"><{$block.content}></div>
+<{/foreach}>
+<!-- End center-right blocks loop --></th><{/if}>
+                  </tr>
+                </table></td>
+              </tr>
+            </table></th>
+            <th width="2%" scope="col">&nbsp;</th>
+          </tr>
+        </table></th>
+        <th width="15%" valign="top" scope="col"><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+		<{foreach item=block from=$xoops_rblocks}>
+          <tr>
+            <th id="leftx" valign="top" scope="col"><!-- Start right blocks loop -->
+<div class="blockTitle">»&nbsp;<{$block.title}></div>
+<div class="blockContent"><{$block.content}></div>
+<!-- End right blocks loop --></th>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+          </tr>
+		  <{/foreach}>
+        </table></th>
+      </tr>
+    </table></th>
+  </tr>
+</table>
+<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <th id="footx" align="center" valign="top" scope="col"><{$xoops_footer}></th>
+  </tr>
+</table>
+<p>
+</p>
+</body>
+</html>
